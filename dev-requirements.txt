@@ -1,0 +1,13 @@
+# Testing
+pytest>=2.8
+pytest-cov>=2.2
+pytest-django>=2.9
+pytest-spec>=0.2
+pytest-pythonpath
+coverage>=4
+coveralls>1.1
+tox>=1.7
+flake8>2.5
+
+# Releases and versions
+bumpversion>=0.5,<0.6
