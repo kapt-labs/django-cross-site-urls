@@ -3,6 +3,7 @@
 # Standard library imports
 from __future__ import unicode_literals
 import uuid
+import requests
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import translation
@@ -36,7 +37,9 @@ def resolve_url(site_id, view_name, args=None, kwargs=None):
     api_url = get_api_url(site_conf["scheme"],
                           site_conf["domain"])
 
-    api = slumber.API(api_url)
+    session = requests.Session()
+    session.verify = local_settings.VERIFY_SSL_CERT
+    api = slumber.API(api_url, session=session)
 
     resolver = RESOLVE_API_VIEW_URL.replace('/', '')
     url = getattr(api, resolver).get(**resolve_args)['url']
