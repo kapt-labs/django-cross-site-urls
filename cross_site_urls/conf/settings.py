@@ -15,6 +15,8 @@ DEFAULT_API_URL = getattr(settings, 'CROSS_SITE_URLS_DEFAULT_API_URL', 'urls/')
 
 VERIFY_SSL_CERT = getattr(settings, 'CROSS_SITE_URLS_VERIFY_SSL_CERT', True)
 
+API_AUTH_CREDENTIALS = getattr(settings, 'CROSS_SITE_API_AUTH_CREDENTIALS', None)
+
 # The following setting should define the related sites configuration
 # It should contains a dictionary defining each related site:
 #

@@ -39,7 +39,7 @@ def resolve_url(site_id, view_name, args=None, kwargs=None):
 
     session = requests.Session()
     session.verify = local_settings.VERIFY_SSL_CERT
-    api = slumber.API(api_url, session=session)
+    api = slumber.API(api_url, session=session, auth=local_settings.API_AUTH_CREDENTIALS)
 
     resolver = RESOLVE_API_VIEW_URL.replace('/', '')
     url = getattr(api, resolver).get(**resolve_args)['url']
