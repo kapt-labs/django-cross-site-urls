@@ -16,14 +16,13 @@ from .utils import get_api_url
 from .constants import RESOLVE_API_VIEW_URL
 
 
-def resolve_url(site_id, view_name, args=None, kwargs=None):
+def resolve_url(site_id, view_name, args=None, kwargs=None, language=None):
 
     if site_id not in local_settings.SITES:
         raise ImproperlyConfigured("[Cross site] Configuration error: The given site identifier is not configured in the settings")
 
     site_conf = local_settings.SITES[site_id]
-    language = translation.get_language()
-
+    language = translation.get_language() if language is None else language
     resolve_args = {'view_name': view_name,
                     'args': args,
                     'language': language}
