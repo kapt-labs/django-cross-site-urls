@@ -26,8 +26,8 @@ class URLResolveAPIView(APIView):
         if view_name is None or language is None:
             raise ParseError("[Cross site] Invalid call")
         args = request.GET.getlist('args')
-        kwargs_prefix = request.GET.get("kwargs_prefix", None)
 
+        kwargs_prefix = request.GET.get("kwargs_prefix", None)
         kwargs = unprefix_kwargs(kwargs_prefix, request.GET) if kwargs_prefix is not None else {}
 
         current_language_code = translation.get_language()
