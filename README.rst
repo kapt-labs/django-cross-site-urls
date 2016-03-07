@@ -18,14 +18,17 @@ django-cross-site-urls
     :target: https://coveralls.io/r/kapt-labs/django-cross-site-urls
     :alt: Coveralls status
 
-*A Django module allowing to resolve urls across two django sites.*
+
+Please consider that this module is in active development and is currently not ready for production.
+
+*A Django module allowing to resolve urls across two django different sites.*
 
 .. contents:: :local:
 
 Requirements
 ------------
 
-Python 2.7+ or 3.3+, Django 1.7+, Django REST framework >= 3.2.4.
+Python 2.7+ or 3.3+, Django 1.7+, Django REST framework 3.2+, Slumber 0.7+.
 
 Installation
 -------------
@@ -42,6 +45,7 @@ Once installed you just need to add ``cross_site_urls`` to ``INSTALLED_APPS`` in
 
   INSTALLED_APPS = (
       # other apps
+      'rest_framework',
       'cross_site_urls',
   )
 

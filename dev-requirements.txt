@@ -5,7 +5,7 @@ pytest-django>=2.9
 pytest-spec>=0.2
 pytest-pythonpath
 coverage>=4
-coveralls>1.1
+coveralls>1.0
 tox>=1.7
 flake8>2.5
 
